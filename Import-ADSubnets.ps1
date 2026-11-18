@@ -1,4 +1,4 @@
-﻿<#
+<#
 .SYNOPSIS
     Importiert IP-Subnetze aus einer CSV-Datei in Active Directory Sites and Services.
 
@@ -85,8 +85,8 @@ foreach ($row in $subnets) {
     }
 
     $subnetName = $row.Subnet.Trim()
-    $siteName   = $row.SiteName.Trim()
-    $desc       = if ($row.Description) { $row.Description.Trim() } else { "" }
+    $siteName = $row.SiteName.Trim()
+    $desc = if ($row.Description) { $row.Description.Trim() } else { "" }
 
     Write-Host "`nPrüfe: $subnetName -> Ziel-Site: $siteName" -ForegroundColor White
 
@@ -149,3 +149,6 @@ Write-Host " Aktualisiert:  $($stats.Updated)" -ForegroundColor Yellow
 Write-Host " Unverändert:   $($stats.Skipped)" -ForegroundColor Gray
 Write-Host " Fehler/Skips:  $($stats.Errors)"  -ForegroundColor $(if ($stats.Errors -gt 0) { "Red" } else { "Gray" })
 Write-Host "=================================================" -ForegroundColor Cyan
+
+
+### test
